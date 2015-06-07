@@ -29,6 +29,7 @@ ball2.move();
 ball2.display();
 ball3.move();
 ball3.display();
+
 } 
 
 function Enemy() {
