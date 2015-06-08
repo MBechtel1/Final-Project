@@ -2,19 +2,17 @@ var y = 100;
 var enemies = [];
 var numberOfEnemies = 20;
 var enemySpeed = 10;
+var song;
 
 function setup() {
-
- 
-  createCanvas(1000, 600);  
-  noCursor();
+ createCanvas(1000, 600);  
+ noCursor();
   stroke(255);     
   frameRate(30);
   for (var i = 0; i < numberOfEnemies; i++) {
 	  enemies.push(new Enemy());
   }
 }
-
 
 function draw() { 
 background(0);   // Set the background to black
