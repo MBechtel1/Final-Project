@@ -1,6 +1,6 @@
 var y = 100;
 var enemies = [];
-var numberOfEnemies = 10;
+var numberOfEnemies = 20;
 var enemySpeed = 10;
 
 function setup() {
@@ -25,6 +25,7 @@ fill(252, 60, 115);
 enemies.forEach(function(enemy) {
 	enemy.move();
 	enemy.display();
+	enemy.checkCollision();
 });
 } 
 
@@ -34,6 +35,7 @@ function Enemy() {
 	this.diameter = (15, 15);
 	this.speed = [random(-enemySpeed, enemySpeed), random(-enemySpeed, enemySpeed)];
 	
+
 	this.move = function() {
 		if (this.x > width) {
 		  this.x = 0;
@@ -50,13 +52,18 @@ function Enemy() {
 		this.y += this.speed[1];
 		}
 		
+	
 	};
 	
 	this.display = function() {
-		ellipse(this.x, this.y, this.diameter, this.diameter);
-	  
-  };
-
-
+		ellipse(this.x, this.y, this.diameter, this.diameter); 
+    };
+	
+	this.checkCollision = function() {                      //this is what is not working
+		if(this.x === mouseX && this.y === mouseY) {
+      alert('You touched a ball so you lose!');
+		}
+	};
+	
 
 }
