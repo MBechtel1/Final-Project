@@ -2,7 +2,6 @@ var y = 100;
 var enemies = [];
 var numberOfEnemies = 20;
 var enemySpeed = 10;
-var song;
 
 function setup() {
  createCanvas(1000, 600);  
@@ -58,9 +57,11 @@ function Enemy() {
     };
 	
 	this.checkCollision = function() {                      //this is what is not working
-		if(this.x === mouseX && this.y === mouseY) {
-      alert('You touched a ball so you lose!');
+		if(this.x > (mouseX - 15) && this.x < (mouseX + 15) ) {
+			if(this.y > (mouseY - 15) && this.y < (mouseY + 15) ) {	
+      alert('You touched a ball so you lose! Press OK to restart');
 		}
+			}
 	};
 	
 
